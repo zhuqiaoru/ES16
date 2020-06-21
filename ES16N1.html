@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let calc=(a,b)=>{
+            if (isFinite(a)||isFinite(b)){
+                let r=a**b;
+                if(isNaN(r))
+                    console.log(`${a}的${b}次方无解`);
+                else
+                    console.log(`${a}的${b}次方结果是${r}`)
+            }
+            else{
+                console.log(`参数为${a}和${b},只有2个参数都是数字才能计算`);
+            }
+        }
+        calc('a16','b0.5');
+        calc(16,0.5);
+        calc(-16,0.5);
+        calc(5,0.5);
+    </script>
+</body>
+</html>

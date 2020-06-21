@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Book;
+        {
+            let _price=Symbol.for('price')
+            Book=function (price){
+                this[_price]=price;
+            }
+            Book.prototype.setPrice=function(value){
+                this[_price]=value
+            }
+            Book.prototype.getPrice=function(){
+                return this[_price]
+            }
+        }
+        let book=new Book(43.21);
+        console.log(book.getPrice());
+        book.setPrice(54.32);
+        console.log(book[Symbol.for('price')]);
+    </script>
+</body>
+</html>
